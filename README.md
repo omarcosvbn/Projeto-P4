@@ -1,0 +1,1 @@
+# Edit > Project Settings > XR Plug-in Management and select platform(s)
