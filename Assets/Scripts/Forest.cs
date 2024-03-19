@@ -12,8 +12,8 @@ public class RandomForestGenerator : MonoBehaviour {
     private void Start() {
 
         // Loop through all the positions within our forest boundary.
-        for (int x = 0; x < forestSize; x += elementSpacing) {
-            for (int z = 0; z < forestSize; z += elementSpacing) {
+        for (int x = -forestSize/2; x < forestSize/2; x += elementSpacing) {
+            for (int z = -forestSize/2; z < forestSize/2; z += elementSpacing) {
 
                 // For each position, loop through each element...
                 for (int i = 0; i < elements.Length; i++) {
