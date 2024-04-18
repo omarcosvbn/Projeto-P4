@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class Fire : MonoBehaviour{
 
@@ -9,37 +10,40 @@ public class Fire : MonoBehaviour{
     public float chance;
 
     void Start(){
-            onFire = false;
-            GetComponent<Renderer>().material.color = new Color(0, 255, 0);
-            temperature.value = 0.15f;
+        onFire = false;
+        StartCoroutine(IncrementTemperature());
+        StartCoroutine(RandomFireGeneration());
     }
 
-    void Update(){
-        //velocidade em que os incendios sobem a barra de temperatura
-        if(onFire == true){
-            temperature.value += 0.0005f * Time.deltaTime;
+    IEnumerator IncrementTemperature(){
+        while (true){
+            yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
+            if (onFire){
+                temperature.value += 0.1f; // Adjust the increment value as needed
+            }
         }
+    }
 
-        //apagar os incendios para testar
-        if (Mouse.current.leftButton.wasPressedThisFrame){
-            onFire = false;
-            GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+    IEnumerator RandomFireGeneration(){
+        while (true){
+            yield return new WaitForSeconds(1.0f); // Repeat every 1 second
+            if (!onFire){
+                float temperatureNormalized = temperature.value / 10000 / temperature.maxValue;
+                chance = temperatureNormalized * 100;
+                if (Random.value < chance){
+                    onFire = true;
+                }
+            }
         }
+    }
 
-        //criar incendios com base no valor do slider
-        chance = temperature.value * 100;
-        if(Random.Range(1, 100) < chance){
-            onFire = true;
-            GetComponent<Renderer>().material.color = new Color(255, 0, 0);
-        }
+    void Update(){  
+        //mudar cor para teste
+        if(onFire == true) GetComponent<Renderer>().material.color = new Color(255, 0, 0);
+        else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
     }
 
     public void SetOnFire(bool value){
         onFire = value;
-    }
-
-    public void OnTriggerEnter(){
-        onFire = false;
-        GetComponent<Renderer>().material.color = new Color(0, 255, 0);
     }
 }
