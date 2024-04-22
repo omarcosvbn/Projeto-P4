@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &77569271
@@ -477,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &159908397
@@ -619,6 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &181709591
@@ -950,6 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &214703980
@@ -1614,6 +1618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &342470545
@@ -1978,6 +1983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1001 &452463679
@@ -2848,6 +2854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &554308443
@@ -3651,6 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &633132816
@@ -4550,6 +4558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &732143909
@@ -4715,6 +4724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &743104725
@@ -4977,6 +4987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &889908308
@@ -37518,6 +37529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &985629923
@@ -37618,6 +37630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &985629930
@@ -37844,6 +37857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &1003530700
@@ -37986,6 +38000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1088776599
@@ -38489,6 +38504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1200989031
@@ -38881,6 +38897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &1256143742
@@ -39072,6 +39089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1349041356
@@ -40236,6 +40254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1582477090
@@ -40577,7 +40596,7 @@ GameObject:
   - component: {fileID: 1631335169}
   - component: {fileID: 1631335172}
   - component: {fileID: 1631335171}
-  - component: {fileID: 1631335170}
+  - component: {fileID: 1631335173}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -40600,19 +40619,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 374938177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1631335170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631335168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293f3fbbe2f530149a87a4db493b779b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectScriptObject: {fileID: 420110851}
 --- !u!65 &1631335171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40661,6 +40667,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1631335173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631335168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293f3fbbe2f530149a87a4db493b779b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPressed: 0
 --- !u!4 &1637406863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0744946e0cae19e4dad41f4ec54264d4, type: 3}
@@ -40995,6 +41014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1667989055
@@ -41244,6 +41264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &1702083039
@@ -42186,6 +42207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &1860191936
@@ -42732,6 +42754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &1934945946
@@ -43154,6 +43177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!1 &2046030435
@@ -43569,6 +43593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 144575931}
+  button: {fileID: 1631335168}
   onFire: 0
   chance: 0
 --- !u!65 &2094680265

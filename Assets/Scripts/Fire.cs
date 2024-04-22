@@ -6,6 +6,8 @@ using System.Collections;
 public class Fire : MonoBehaviour{
 
     public Slider temperature;
+    [SerializeField] GameObject button;
+    private Button buttonScript;
     public bool onFire;
     public float chance;
 
@@ -13,6 +15,7 @@ public class Fire : MonoBehaviour{
         onFire = false;
         StartCoroutine(IncrementTemperature());
         StartCoroutine(RandomFireGeneration());
+        buttonScript = button.GetComponent<Button>();
     }
 
     IEnumerator IncrementTemperature(){
@@ -41,9 +44,11 @@ public class Fire : MonoBehaviour{
         //mudar cor para teste
         if(onFire == true) GetComponent<Renderer>().material.color = new Color(255, 0, 0);
         else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+
+        Debug.Log(buttonScript.isPressed);
     }
 
-    public void SetOnFire(bool value){
-        onFire = value;
+    private void OnTriggerEnter(){
+        if(onFire == true && buttonScript.isPressed == true) onFire = false;
     }
 }
