@@ -44,11 +44,9 @@ public class Fire : MonoBehaviour{
         //mudar cor para teste
         if(onFire == true) GetComponent<Renderer>().material.color = new Color(255, 0, 0);
         else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
-
-        Debug.Log(buttonScript.isPressed);
     }
 
-    private void OnTriggerEnter(){
+    private void OnTriggerEnter(Collider other){
         if(onFire == true && buttonScript.isPressed == true) onFire = false;
     }
 }
