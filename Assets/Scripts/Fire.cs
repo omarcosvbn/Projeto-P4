@@ -46,7 +46,7 @@ public class Fire : MonoBehaviour{
         else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
     }
 
-    private void OnTriggerEnter(Collider other){
+    private void OnTriggerStay(Collider other){
         if(onFire == true && buttonScript.isPressed == true) onFire = false;
     }
 }
