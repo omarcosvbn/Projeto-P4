@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
     public bool isPressed;
-    private bool alreadyPressed;
+    //private bool alreadyPressed;
 
     private void OnTriggerEnter(Collider other){
-        if (!alreadyPressed){
+        //if (!alreadyPressed){
             isPressed = true;
-            alreadyPressed = true;
-        }
-        isPressed = false;
+        //    alreadyPressed = true;
+        //}
+        //isPressed = false;
     }
 
     private void OnTriggerExit(Collider other){
             isPressed = false;
-            alreadyPressed = false;
+          //  alreadyPressed = false;
     }
 }
