@@ -11,8 +11,6 @@ public class Fire : MonoBehaviour{
     [SerializeField] GameObject buttonDown;
     
     private Button buttonScript;
-    private Button buttonUpScript;
-    private Button buttonDownScript;
 
     public bool onFire;
     public float chance;
@@ -25,8 +23,6 @@ public class Fire : MonoBehaviour{
         StartCoroutine(IncrementTemperature());
         StartCoroutine(RandomFireGeneration());
         buttonScript = button.GetComponent<Button>();
-        buttonUpScript = buttonUp.GetComponent<Button>();
-        buttonDownScript = buttonDown.GetComponent<Button>();
     }
 
     IEnumerator IncrementTemperature(){
@@ -55,7 +51,6 @@ public class Fire : MonoBehaviour{
         //mudar cor para teste
         if(onFire == true) GetComponent<Renderer>().material.color = new Color(255, 0, 0);
         else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
-
 
     }
 
