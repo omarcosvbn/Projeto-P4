@@ -7,8 +7,8 @@ public class Locator : MonoBehaviour {
     [SerializeField] Rigidbody smallColliderRigidbody;
     [SerializeField] Rigidbody bigColliderRigidbody;
 
-    [SerializeField] float smallColliderSpeed = 0.01f;
-    [SerializeField] float bigColliderSpeed = 5f;
+    [SerializeField] float smallColliderSpeed = 1f;
+    [SerializeField] float bigColliderSpeed = 2f;
 
     void Update() {
         if (buttonUpScript.isPressed) {
