@@ -7,16 +7,12 @@ public class Fire : MonoBehaviour{
 
     public GameObject temperature;
     [SerializeField] GameObject button;
-    [SerializeField] GameObject buttonUp;
-    [SerializeField] GameObject buttonDown;
     
     private Button buttonScript;
 
     public bool onFire;
     public float chance;
 
-    [SerializeField] GameObject bigCollider;
-    [SerializeField] GameObject smallCollider;
 
     void Start(){
         onFire = false;
