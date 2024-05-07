@@ -1931,7 +1931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 1.967201
       objectReference: {fileID: 0}
     - target: {fileID: 8063056433196656523, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Layer
@@ -1948,6 +1948,10 @@ PrefabInstance:
     - target: {fileID: 9014170783705847997, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_TagString
       value: PlayerHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948809, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Layer
@@ -2782,13 +2786,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671505085}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.0139, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1061204561}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &671505087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2832,8 +2836,8 @@ MonoBehaviour:
   buttonDownScript: {fileID: 1933668491}
   smallColliderRigidbody: {fileID: 671505087}
   bigColliderRigidbody: {fileID: 1819698892}
-  smallColliderSpeed: 0.02
-  bigColliderSpeed: 2
+  smallColliderSpeed: 0.1
+  bigColliderSpeed: 10
 --- !u!65 &671505089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4882,13 +4886,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196304094}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0139, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.00020599365, y: 0.013899803, z: 0.00032949448}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 621536871}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &1196304096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4932,8 +4936,8 @@ MonoBehaviour:
   buttonDownScript: {fileID: 391003587}
   smallColliderRigidbody: {fileID: 1196304096}
   bigColliderRigidbody: {fileID: 1763042947}
-  smallColliderSpeed: 0.02
-  bigColliderSpeed: 2
+  smallColliderSpeed: 0.1
+  bigColliderSpeed: 10
 --- !u!65 &1196304098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5129,13 +5133,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240896655}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.0139, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2060567857}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &1240896657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5179,8 +5183,8 @@ MonoBehaviour:
   buttonDownScript: {fileID: 1955866679}
   smallColliderRigidbody: {fileID: 1240896657}
   bigColliderRigidbody: {fileID: 405977562}
-  smallColliderSpeed: 0.02
-  bigColliderSpeed: 2
+  smallColliderSpeed: 0.1
+  bigColliderSpeed: 10
 --- !u!65 &1240896659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5495,8 +5499,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.20455053, y: 0.09355116, z: 0.39294487}
-  m_Center: {x: 0.009955794, y: -0.03428483, z: -0.074386925}
+  m_Size: {x: 0.034056555, y: 0.043221474, z: 0.09129059}
+  m_Center: {x: 0.006230386, y: -0.009890556, z: -0.0073352456}
 --- !u!54 &1279504982
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7494,8 +7498,8 @@ MonoBehaviour:
   buttonDownScript: {fileID: 742495136}
   smallColliderRigidbody: {fileID: 1646508624}
   bigColliderRigidbody: {fileID: 2042342259}
-  smallColliderSpeed: 0.02
-  bigColliderSpeed: 2
+  smallColliderSpeed: 0.1
+  bigColliderSpeed: 10
 --- !u!54 &1646508624
 Rigidbody:
   m_ObjectHideFlags: 0
