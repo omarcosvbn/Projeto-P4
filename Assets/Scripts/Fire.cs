@@ -10,6 +10,9 @@ public class Fire : MonoBehaviour{
     
     private Button buttonScript;
 
+    [SerializeField] GameObject fireParticles;
+    [SerializeField] AudioSource fireSound;
+
     public bool onFire;
     public float chance;
 
@@ -19,6 +22,8 @@ public class Fire : MonoBehaviour{
         StartCoroutine(IncrementTemperature());
         StartCoroutine(RandomFireGeneration());
         buttonScript = button.GetComponent<Button>();
+
+        fireParticles.SetActive(false);
     }
 
     // Function to reverse map a value from range 1-4 to range 0-1
@@ -64,6 +69,7 @@ IEnumerator IncrementTemperature(){
                 chance = mappedValue;
                 if (Random.value < chance){
                     onFire = true;
+                    fireSound.Play();
                 }
             }
         }
@@ -73,8 +79,15 @@ IEnumerator IncrementTemperature(){
 
     void Update(){  
         //mudar cor para teste
-        if(onFire == true) GetComponent<Renderer>().material.color = new Color(255, 0, 0);
-        else GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+        if(onFire == true){
+            fireParticles.SetActive(true);
+            GetComponent<Renderer>().material.color = new Color(255, 0, 0);
+        }
+        else{
+            fireParticles.SetActive(false);
+            fireSound.Stop();
+            GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+        }
 
     }
 
