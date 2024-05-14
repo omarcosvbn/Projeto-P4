@@ -15,6 +15,9 @@ public class Fire : MonoBehaviour{
 
     [SerializeField] GameObject rainParticles;
 
+
+    [SerializeField] GameObject blackScreen;
+
     public bool onFire;
     public float chance;
     public float timer = 0f; // Time in seconds (60.0f = 60s)
@@ -28,6 +31,7 @@ public class Fire : MonoBehaviour{
 
         fireParticles.SetActive(false);
         rainParticles.SetActive(false);
+        blackScreen.SetActive(false);
     }
 
     // Function to reverse map a value from range 1-4 to range 0-1
@@ -46,7 +50,7 @@ IEnumerator IncrementTemperature(){
     while (true){
         yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
         if (onFire){
-            float incrementValue = 0.005f; // Adjust the increment value for difficulty (0.001f seems good)
+            float incrementValue = 0.005f; // Adjust the increment value for difficulty (0.005f seems good)
             float newYScale = temperature.transform.localScale.y + incrementValue;
             
              newYScale = Mathf.Clamp(newYScale, 0f, 4);
@@ -91,11 +95,22 @@ IEnumerator IncrementTemperature(){
             fireSound.Stop();
         }
 
-        if (timer > 0.0f) timer -= Time.deltaTime;
-        else if (timer <= 0.0f){
+        if(timer > 0.0f) timer -= Time.deltaTime;
+        else if(timer <= 0.0f){
             rainParticles.SetActive(false); 
         }
 
+
+        if(temperature.transform.localScale.y >= 4){
+            blackScreen.SetActive(true);
+                        
+            Vector3 newScale = temperature.transform.localScale;
+            temperature.transform.localScale = new Vector3(newScale.x, 1.1f, newScale.z);
+            chance = 0.033f;
+            onFire = false;
+
+            blackScreen.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other){
