@@ -13,8 +13,11 @@ public class Fire : MonoBehaviour{
     [SerializeField] GameObject fireParticles;
     [SerializeField] AudioSource fireSound;
 
+    [SerializeField] GameObject rainParticles;
+
     public bool onFire;
     public float chance;
+    public float timer = 0f; // Time in seconds (60.0f = 60s)
 
 
     void Start(){
@@ -24,6 +27,7 @@ public class Fire : MonoBehaviour{
         buttonScript = button.GetComponent<Button>();
 
         fireParticles.SetActive(false);
+        rainParticles.SetActive(false);
     }
 
     // Function to reverse map a value from range 1-4 to range 0-1
@@ -42,7 +46,7 @@ IEnumerator IncrementTemperature(){
     while (true){
         yield return new WaitForSeconds(1.0f); // Adjust the delay as needed
         if (onFire){
-            float incrementValue = 0.01f; // Adjust the increment value as needed
+            float incrementValue = 0.005f; // Adjust the increment value for difficulty (0.001f seems good)
             float newYScale = temperature.transform.localScale.y + incrementValue;
             
              newYScale = Mathf.Clamp(newYScale, 0f, 4);
@@ -57,7 +61,7 @@ IEnumerator IncrementTemperature(){
 
     IEnumerator RandomFireGeneration(){
         while (true){
-            yield return new WaitForSeconds(1.0f); // Repeat every 1 second
+            yield return new WaitForSeconds(15.0f); // Repeat every 15 second
             if (!onFire){
                 // Get the temperature's Y scale
                 float temperatureYScale = temperature.transform.localScale.y;
@@ -69,7 +73,6 @@ IEnumerator IncrementTemperature(){
                 chance = mappedValue;
                 if (Random.value < chance){
                     onFire = true;
-                    fireSound.Play();
                 }
             }
         }
@@ -80,18 +83,26 @@ IEnumerator IncrementTemperature(){
     void Update(){  
         //mudar cor para teste
         if(onFire == true){
+            if(!fireSound.isPlaying)fireSound.Play();
             fireParticles.SetActive(true);
-            GetComponent<Renderer>().material.color = new Color(255, 0, 0);
         }
         else{
             fireParticles.SetActive(false);
             fireSound.Stop();
-            GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+        }
+
+        if (timer > 0.0f) timer -= Time.deltaTime;
+        else if (timer <= 0.0f){
+            rainParticles.SetActive(false); 
         }
 
     }
 
     private void OnTriggerStay(Collider other){
-        if(onFire == true && buttonScript.isPressed == true) onFire = false;
+        if(onFire == true && buttonScript.isPressed == true){
+            onFire = false;
+            rainParticles.SetActive(true);
+            timer = 3f;
+        }
     }
 }
