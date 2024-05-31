@@ -9,14 +9,13 @@ public class Fire : MonoBehaviour{
     [SerializeField] GameObject button;
     
     private Button buttonScript;
+    [SerializeField] Menus menusScript;
 
     [SerializeField] GameObject fireParticles;
     [SerializeField] AudioSource fireSound;
 
     [SerializeField] GameObject rainParticles;
 
-
-    [SerializeField] GameObject blackScreen;
 
     public bool onFire;
     public float chance;
@@ -31,7 +30,6 @@ public class Fire : MonoBehaviour{
 
         fireParticles.SetActive(false);
         rainParticles.SetActive(false);
-        blackScreen.SetActive(false);
     }
 
     // Function to reverse map a value from range 1-4 to range 0-1
@@ -85,7 +83,6 @@ IEnumerator IncrementTemperature(){
     
 
     void Update(){  
-        //mudar cor para teste
         if(onFire == true){
             if(!fireSound.isPlaying)fireSound.Play();
             fireParticles.SetActive(true);
@@ -101,15 +98,18 @@ IEnumerator IncrementTemperature(){
         }
 
 
-        if(temperature.transform.localScale.y >= 4){
-            blackScreen.SetActive(true);
-                        
+        if(menusScript.canStart == false){ 
+            Vector3 newScale = temperature.transform.localScale;
+            temperature.transform.localScale = new Vector3(newScale.x, 1f, newScale.z);                       
+            chance = 0f;
+            onFire = false;
+        }
+
+        if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true){                        
             Vector3 newScale = temperature.transform.localScale;
             temperature.transform.localScale = new Vector3(newScale.x, 1.1f, newScale.z);
             chance = 0.033f;
             onFire = false;
-
-            blackScreen.SetActive(false);
         }
     }
 
