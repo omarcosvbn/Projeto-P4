@@ -21,6 +21,8 @@ public class Fire : MonoBehaviour{
     public float chance;
     public float timer = 0f; // Time in seconds (60.0f = 60s)
 
+    private bool alreadyStarted = false;
+
 
     void Start(){
         onFire = false;
@@ -105,11 +107,12 @@ IEnumerator IncrementTemperature(){
             onFire = false;
         }
 
-        if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true){                        
+        if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true && alreadyStarted == false){                        
             Vector3 newScale = temperature.transform.localScale;
             temperature.transform.localScale = new Vector3(newScale.x, 1.1f, newScale.z);
             chance = 0.033f;
             onFire = false;
+            alreadyStarted = true;
         }
     }
 
