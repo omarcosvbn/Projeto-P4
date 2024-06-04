@@ -12,6 +12,7 @@ public class Fire : MonoBehaviour{
     [SerializeField] Menus menusScript;
 
     [SerializeField] GameObject fireParticles;
+    [SerializeField] GameObject fireParticlesEdges;
     [SerializeField] AudioSource fireSound;
 
     [SerializeField] GameObject rainParticles;
@@ -24,6 +25,7 @@ public class Fire : MonoBehaviour{
     private bool alreadyStarted = false;
 
 
+
     void Start(){
         onFire = false;
         StartCoroutine(IncrementTemperature());
@@ -31,6 +33,7 @@ public class Fire : MonoBehaviour{
         buttonScript = button.GetComponent<Button>();
 
         fireParticles.SetActive(false);
+        fireParticlesEdges.SetActive(false);
         rainParticles.SetActive(false);
     }
 
@@ -100,22 +103,24 @@ IEnumerator IncrementTemperature(){
         }
 
 
+        Vector3 newScale = temperature.transform.localScale;
         if(menusScript.canStart == false){ 
-            Vector3 newScale = temperature.transform.localScale;
             temperature.transform.localScale = new Vector3(newScale.x, 1f, newScale.z);                       
             chance = 0f;
             onFire = false;
         }
-
-        if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true && alreadyStarted == false){                        
-            Vector3 newScale = temperature.transform.localScale;
+        else if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true && alreadyStarted == false){                        
             temperature.transform.localScale = new Vector3(newScale.x, 1.1f, newScale.z);
             chance = 0.033f;
             onFire = false;
             alreadyStarted = true;
         }
-    }
 
+        if(newScale.y >= 3f && fireParticlesEdges.activeSelf == false){
+            fireParticlesEdges.SetActive(true);
+        }
+    }
+    
     private void OnTriggerStay(Collider other){
         if(onFire == true && buttonScript.isPressed == true){
             onFire = false;
