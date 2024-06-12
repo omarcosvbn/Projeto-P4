@@ -109,7 +109,7 @@ IEnumerator IncrementTemperature(){
             chance = 0f;
             onFire = false;
         }
-        else if(temperature.transform.localScale.y >= 4 || menusScript.canStart == true && alreadyStarted == false){                        
+        else if(menusScript.canStart == true && alreadyStarted == false){                        
             temperature.transform.localScale = new Vector3(newScale.x, 1.1f, newScale.z);
             chance = 0.033f;
             onFire = false;
